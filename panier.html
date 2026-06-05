@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Obsidian Parfums</title>
+    <meta name="description" content="Votre panier Obsidian Parfums. Vérifiez vos articles et procédez au paiement.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="accueil.html">
+            <img src="logo.png" alt="Retour à l'accueil - Obsidian Parfums" class="logo-site">
+        </a>
+        <div id="nav"></div>
+    </header>
+
+    <main>
+        <br><br><br><br>
+        <div class="cadre-panier">
+            <h2>Votre Panier</h2>
+            <p class="slogan">Vérifiez vos articles avant de continuer</p>
+            <hr class="ligne-separation">
+
+            <div class="panier-header">
+                <span>Produit</span>
+                <span>Quantité</span>
+                <span>Prix</span>
+                <span></span>
+            </div>
+
+            <div id="panier-lignes">
+                <!-- Rempli dynamiquement par JavaScript -->
+            </div>
+
+            <div class="panier-vide" id="panier-vide" style="display:none;">
+                <span style="font-size:36px; display:block; margin-bottom:14px;">🛒</span>
+                Votre panier est vide
+                <br><br>
+                <a href="produits.html" class="btn-principal" style="font-size:11px;">Découvrir nos fragrances</a>
+            </div>
+
+            <div class="panier-recapitulatif" id="recapitulatif">
+                <div class="recap-ligne">
+                    <span>Sous-total</span>
+                    <span id="sous-total">0 €</span>
+                </div>
+                <div class="recap-ligne">
+                    <span>Livraison</span>
+                    <span>Gratuite</span>
+                </div>
+                <div class="recap-ligne total">
+                    <span>Total</span>
+                    <span id="total">0 €</span>
+                </div>
+            </div>
+
+            <div class="panier-actions">
+                <a href="produits.html" class="btn-continuer">← Continuer mes achats</a>
+                <a href="paiement.html" class="btn-principal" id="btn-payer">Procéder au paiement</a>
+            </div>
+        </div><br><br>
+    </main>
+
+    <script src="nav.js"></script>
+    <script>chargerNav('');</script>
+    <script>
+        // --- Chargement du panier depuis localStorage ---
+        let produits = JSON.parse(localStorage.getItem('obsidian_panier') || '{}');
+
+        function formaterPrix(val) {
+            return val.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        }
+
+        function sauvegarder() {
+            localStorage.setItem('obsidian_panier', JSON.stringify(produits));
+        }
+
+        function afficherLignes() {
+            const conteneur = document.getElementById('panier-lignes');
+            conteneur.innerHTML = '';
+            const ids = Object.keys(produits);
+
+            ids.forEach(id => {
+                const p = produits[id];
+                const div = document.createElement('div');
+                div.className = 'panier-ligne';
+                div.id = 'ligne-' + id;
+                div.innerHTML = `
+                    <div class="produit-info">
+                        <div class="produit-icone">◆</div>
+                        <div>
+                            <div class="produit-nom">${p.nom}</div>
+                            <div class="produit-sous">Eau de parfum · ${p.taille || '100ml EDP'}</div>
+                        </div>
+                    </div>
+                    <div class="quantite-ctrl">
+                        <button class="qty-btn" onclick="changerQty('${id}', -1)">−</button>
+                        <span class="qty-val" id="qty-${id}">${p.qty}</span>
+                        <button class="qty-btn" onclick="changerQty('${id}', 1)">+</button>
+                    </div>
+                    <div class="ligne-prix" id="prix-${id}">${formaterPrix(p.prixUnit * p.qty)}</div>
+                    <button class="btn-suppr" onclick="supprimerLigne('${id}')" title="Supprimer">×</button>
+                `;
+                conteneur.appendChild(div);
+            });
+        }
+
+        function mettreAJour() {
+            afficherLignes();
+
+            let total = 0;
+            const ids = Object.keys(produits);
+
+            ids.forEach(id => {
+                const p = produits[id];
+                total += p.prixUnit * p.qty;
+            });
+
+            document.getElementById('sous-total').textContent = formaterPrix(total);
+            document.getElementById('total').textContent = formaterPrix(total);
+
+            const vide = ids.length === 0;
+            document.getElementById('panier-vide').style.display = vide ? 'block' : 'none';
+            document.getElementById('recapitulatif').style.display = vide ? 'none' : 'block';
+            document.getElementById('btn-payer').style.display = vide ? 'none' : 'inline-block';
+            document.querySelector('.panier-header').style.display = vide ? 'none' : 'grid';
+            document.querySelector('.panier-actions').style.justifyContent = vide ? 'center' : 'space-between';
+        }
+
+        function changerQty(id, delta) {
+            if (!produits[id]) return;
+            produits[id].qty = Math.max(1, produits[id].qty + delta);
+            sauvegarder();
+            mettreAJour();
+        }
+
+        function supprimerLigne(id) {
+            delete produits[id];
+            sauvegarder();
+            mettreAJour();
+        }
+
+        // Initialisation
+        mettreAJour();
+    </script>
+</body>
+</html>

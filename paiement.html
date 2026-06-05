@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Obsidian Parfums</title>
+    <meta name="description" content="Finalisez votre commande Obsidian Parfums en toute sécurité.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="accueil.html">
+            <img src="logo.png" alt="Retour à l'accueil - Obsidian Parfums" class="logo-site">
+        </a>
+        <div id="nav"></div>
+    </header>
+
+    <main>
+        <br><br><br><br>
+        <div class="cadre-paiement">
+            <h2>Finaliser la commande</h2>
+            <p class="slogan">Paiement sécurisé · Obsidian Parfums</p>
+            <hr class="ligne-separation">
+
+            <!-- Étapes -->
+            <div class="etapes">
+                <div class="etape done" id="etape-1">
+                    <div class="etape-num">1</div>
+                    <div class="etape-label">Panier</div>
+                </div>
+                <div class="etape-trait done"></div>
+                <div class="etape active" id="etape-2">
+                    <div class="etape-num">2</div>
+                    <div class="etape-label">Livraison</div>
+                </div>
+                <div class="etape-trait" id="trait-2-3"></div>
+                <div class="etape" id="etape-3">
+                    <div class="etape-num">3</div>
+                    <div class="etape-label">Paiement</div>
+                </div>
+                <div class="etape-trait" id="trait-3-4"></div>
+                <div class="etape" id="etape-4">
+                    <div class="etape-num">4</div>
+                    <div class="etape-label">Confirmation</div>
+                </div>
+            </div>
+
+            <!-- ÉTAPE 2 : Livraison -->
+            <div class="section-paiement active" id="section-2">
+                <h3 style="margin-bottom:24px;">Adresse de livraison</h3>
+                <div class="form-row">
+                    <div class="form-groupe">
+                        <label>Prénom</label>
+                        <input type="text" id="prenom" placeholder="Votre prénom">
+                    </div>
+                    <div class="form-groupe">
+                        <label>Nom</label>
+                        <input type="text" id="nom" placeholder="Votre nom">
+                    </div>
+                </div>
+                <div class="form-groupe">
+                    <label>Adresse complète</label>
+                    <input type="text" id="adresse" placeholder="N° rue, quartier...">
+                </div>
+                <div class="form-row">
+                    <div class="form-groupe">
+                        <label>Wilaya</label>
+                        <select id="wilaya">
+                            <option value="">Sélectionner...</option>
+                            <option>01 - Adrar</option>
+                            <option>02 - Chlef</option>
+                            <option>03 - Laghouat</option>
+                            <option>04 - Oum El Bouaghi</option>
+                            <option>05 - Batna</option>
+                            <option>06 - Béjaïa</option>
+                            <option>07 - Biskra</option>
+                            <option>08 - Béchar</option>
+                            <option>09 - Blida</option>
+                            <option>10 - Bouira</option>
+                            <option>11 - Tamanrasset</option>
+                            <option>12 - Tébessa</option>
+                            <option>13 - Tlemcen</option>
+                            <option>14 - Tiaret</option>
+                            <option>15 - Tizi Ouzou</option>
+                            <option>16 - Alger</option>
+                            <option>17 - Djelfa</option>
+                            <option>18 - Jijel</option>
+                            <option>19 - Sétif</option>
+                            <option>20 - Saïda</option>
+                            <option>21 - Skikda</option>
+                            <option>22 - Sidi Bel Abbès</option>
+                            <option>23 - Annaba</option>
+                            <option>24 - Guelma</option>
+                            <option>25 - Constantine</option>
+                            <option>26 - Médéa</option>
+                            <option>27 - Mostaganem</option>
+                            <option>28 - M'Sila</option>
+                            <option>29 - Mascara</option>
+                            <option>30 - Ouargla</option>
+                            <option>31 - Oran</option>
+                            <option>32 - El Bayadh</option>
+                            <option>33 - Illizi</option>
+                            <option>34 - Bordj Bou Arréridj</option>
+                            <option>35 - Boumerdès</option>
+                            <option>36 - El Tarf</option>
+                            <option>37 - Tindouf</option>
+                            <option>38 - Tissemsilt</option>
+                            <option>39 - El Oued</option>
+                            <option>40 - Khenchela</option>
+                            <option>41 - Souk Ahras</option>
+                            <option>42 - Tipaza</option>
+                            <option>43 - Mila</option>
+                            <option>44 - Aïn Defla</option>
+                            <option>45 - Naâma</option>
+                            <option>46 - Aïn Témouchent</option>
+                            <option>47 - Ghardaïa</option>
+                            <option>48 - Relizane</option>
+                            <option>49 - El M'Ghair</option>
+                            <option>50 - El Menia</option>
+                            <option>51 - Ouled Djellal</option>
+                            <option>52 - Bordj Badji Mokhtar</option>
+                            <option>53 - Béni Abbès</option>
+                            <option>54 - Timimoun</option>
+                            <option>55 - Touggourt</option>
+                            <option>56 - Djanet</option>
+                            <option>57 - In Salah</option>
+                            <option>58 - In Guezzam</option>
+                        </select>
+                    </div>
+                    <div class="form-groupe">
+                        <label>Code postal</label>
+                        <input type="text" id="code-postal" placeholder="Ex: 09000">
+                    </div>
+                </div>
+                <div class="form-groupe">
+                    <label>Numéro de téléphone</label>
+                    <input type="tel" id="telephone" placeholder="0X XX XX XX XX">
+                </div>
+                <div class="nav-bas">
+                    <a href="panier.html" class="btn-retour">← Retour au panier</a>
+                    <button class="btn-principal" onclick="allerEtape3()">Choisir le paiement →</button>
+                </div>
+            </div><br><br>
+
+            <!-- ÉTAPE 3 : Paiement -->
+            <div class="section-paiement" id="section-3">
+                <h3 style="margin-bottom:24px;">Méthode de paiement</h3>
+
+                <div class="methodes-grid">
+                    <div class="methode-card selected" id="methode-ccp" onclick="choisirMethode('ccp')">
+                        <span class="methode-logo">🏦</span>
+                        <div class="methode-nom">CCP</div>
+                        <div class="methode-sous">Algérie Poste</div>
+                    </div>
+                    <div class="methode-card" id="methode-visa" onclick="choisirMethode('visa')">
+                        <span class="methode-logo">💳</span>
+                        <div class="methode-nom">Visa</div>
+                        <div class="methode-sous">Carte bancaire</div>
+                    </div>
+                    <div class="methode-card" id="methode-mastercard" onclick="choisirMethode('mastercard')">
+                        <span class="methode-logo">💳</span>
+                        <div class="methode-nom">Mastercard</div>
+                        <div class="methode-sous">Carte bancaire</div>
+                    </div>
+                </div>
+
+                <!-- Formulaire CCP -->
+                <div id="form-ccp">
+                    <div class="info-box">
+                        <span class="info-label">Instructions de virement CCP</span>
+                        <p>Effectuez un virement sur le compte suivant :</p>
+                        <p>Titulaire : <strong>Obsidian Parfums SARL</strong></p>
+                        <p>N° CCP : <strong>0012345678 / Clé 96</strong></p>
+                        <p>Montant exact : <strong id="montant-ccp">0,00 €</strong></p>
+                        <p style="margin-top:12px;font-size:12px;color:#1a3a5a;">Après virement, renseignez votre numéro de reçu ci-dessous. Votre commande sera traitée sous 24h.</p>
+                    </div>
+                    <div class="form-groupe">
+                        <label>Numéro de reçu CCP</label>
+                        <input type="text" id="recu-ccp" placeholder="Ex: 2024-XXXXXX">
+                    </div>
+                </div>
+
+                <!-- Formulaire Visa / Mastercard -->
+                <div id="form-carte" style="display:none;">
+                    <div class="form-groupe">
+                        <label>Titulaire de la carte</label>
+                        <input type="text" id="titulaire" placeholder="NOM PRÉNOM">
+                    </div>
+                    <div class="form-groupe">
+                        <label>Numéro de carte</label>
+                        <input type="text" id="num-carte" placeholder="XXXX  XXXX  XXXX  XXXX" maxlength="19" oninput="formaterCarte(this)">
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-groupe">
+                            <label>Date d'expiration</label>
+                            <input type="text" id="expiration" placeholder="MM / AA" maxlength="7" oninput="formaterDate(this)">
+                        </div>
+                        <div class="form-groupe">
+                            <label>CVV</label>
+                            <input type="password" id="cvv" placeholder="•••" maxlength="3">
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <!-- Récap commande depuis localStorage -->
+                <div class="recap-commande">
+                    <div class="recap-titre">Récapitulatif de la commande</div>
+                    <div id="recap-lignes">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                    <div class="recap-item"><span>Livraison</span><span>Gratuite</span></div>
+                    <div class="recap-total">
+                        <span>Total</span>
+                        <span id="recap-total">0,00 €</span>
+                    </div>
+                </div>
+
+                <div class="nav-bas">
+                    <button class="btn-retour" onclick="allerEtape(2)">← Retour</button>
+                    <button class="btn-principal" onclick="confirmerCommande()">Confirmer la commande →</button>
+                </div>
+
+                <div class="securite">
+                    <span>🔒</span> Paiement sécurisé · Données protégées
+                </div>
+            </div><br>
+
+            <!-- ÉTAPE 4 : Confirmation -->
+            <div class="section-paiement" id="section-4">
+                <div class="confirmation-box">
+                    <div class="confirmation-icone">◆</div>
+                    <h3 style="margin-bottom:16px;">Commande confirmée</h3>
+                    <p id="msg-confirmation">Merci pour votre commande. Vous recevrez une confirmation sous peu. Votre colis sera expédié dans les 24 à 48 heures.</p>
+                    <div style="margin-top:32px;">
+                        <a href="produits.html" class="btn-principal">Continuer mes achats</a>
+                    </div><br>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="nav.js"></script>
+    <script>chargerNav('');</script>
+    <script>
+        let methodeCourante = 'ccp';
+
+        // --- Chargement du panier ---
+        const panier = JSON.parse(localStorage.getItem('obsidian_panier') || '{}');
+
+        function formaterPrix(val) {
+            return val.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        }
+
+        function calculerTotal() {
+            let total = 0;
+            for (const id in panier) {
+                total += panier[id].prixUnit * panier[id].qty;
+            }
+            return total;
+        }
+
+        function afficherRecap() {
+            const conteneur = document.getElementById('recap-lignes');
+            conteneur.innerHTML = '';
+            for (const id in panier) {
+                const p = panier[id];
+                const div = document.createElement('div');
+                div.className = 'recap-item';
+                div.innerHTML = `<span>${p.nom} × ${p.qty}</span><span>${formaterPrix(p.prixUnit * p.qty)}</span>`;
+                conteneur.appendChild(div);
+            }
+            const total = calculerTotal();
+            document.getElementById('recap-total').textContent = formaterPrix(total);
+            document.getElementById('montant-ccp').textContent = formaterPrix(total);
+        }
+
+        // Initialisation au chargement de la page
+        afficherRecap();
+
+        // --- Navigation entre étapes ---
+        function allerEtape(num) {
+            document.querySelectorAll('.section-paiement').forEach(s => s.classList.remove('active'));
+            document.getElementById('section-' + num).classList.add('active');
+
+            for (let i = 2; i <= 4; i++) {
+                const etape = document.getElementById('etape-' + i);
+                etape.classList.remove('active', 'done');
+                if (i < num) etape.classList.add('done');
+                else if (i === num) etape.classList.add('active');
+            }
+            const trait23 = document.getElementById('trait-2-3');
+            const trait34 = document.getElementById('trait-3-4');
+            if (trait23) trait23.classList.toggle('done', num > 2);
+            if (trait34) trait34.classList.toggle('done', num > 3);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function allerEtape3() {
+            // Validation simple du formulaire de livraison
+            const prenom = document.getElementById('prenom').value.trim();
+            const nom = document.getElementById('nom').value.trim();
+            const adresse = document.getElementById('adresse').value.trim();
+            const wilaya = document.getElementById('wilaya').value;
+            const telephone = document.getElementById('telephone').value.trim();
+
+            if (!prenom || !nom || !adresse || !wilaya || !telephone) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+            allerEtape(3);
+        }
+
+        // --- Méthode de paiement ---
+        function choisirMethode(methode) {
+            methodeCourante = methode;
+            document.querySelectorAll('.methode-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('methode-' + methode).classList.add('selected');
+            document.getElementById('form-ccp').style.display = methode === 'ccp' ? 'block' : 'none';
+            document.getElementById('form-carte').style.display = (methode === 'visa' || methode === 'mastercard') ? 'block' : 'none';
+        }
+
+        // --- Formatage carte ---
+        function formaterCarte(input) {
+            let val = input.value.replace(/\D/g, '').substring(0, 16);
+            input.value = val.replace(/(.{4})/g, '$1  ').trim();
+        }
+
+        function formaterDate(input) {
+            let val = input.value.replace(/\D/g, '').substring(0, 4);
+            if (val.length > 2) val = val.substring(0, 2) + ' / ' + val.substring(2);
+            input.value = val;
+        }
+
+        // --- Confirmation commande ---
+        function confirmerCommande() {
+            // Validation selon la méthode choisie
+            if (methodeCourante === 'ccp') {
+                const recu = document.getElementById('recu-ccp').value.trim();
+                if (!recu) {
+                    alert('Veuillez renseigner votre numéro de reçu CCP.');
+                    return;
+                }
+            } else {
+                const titulaire = document.getElementById('titulaire').value.trim();
+                const numCarte = document.getElementById('num-carte').value.replace(/\s/g, '');
+                const expiration = document.getElementById('expiration').value.trim();
+                const cvv = document.getElementById('cvv').value.trim();
+                if (!titulaire || numCarte.length < 16 || !expiration || cvv.length < 3) {
+                    alert('Veuillez remplir correctement les informations de votre carte.');
+                    return;
+                }
+            }
+
+            // Récupérer le nom du client pour la confirmation
+            const prenom = document.getElementById('prenom').value.trim();
+            const nom = document.getElementById('nom').value.trim();
+            document.getElementById('msg-confirmation').textContent =
+                `Merci ${prenom} ${nom} pour votre commande. Vous recevrez une confirmation sous peu. Votre colis sera expédié dans les 24 à 48 heures.`;
+
+            // Vider le panier après confirmation
+            localStorage.removeItem('obsidian_panier');
+
+            allerEtape(4);
+        }
+    </script>
+</body>
+</html>

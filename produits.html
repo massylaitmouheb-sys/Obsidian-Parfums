@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits - Obsidian Parfums</title>
+    <meta name="description" content="Collection complète Obsidian Parfums — 20 fragrances de luxe pour homme, livrées partout en Algérie.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="accueil.html">
+            <img src="logo.png" alt="Retour à l'accueil — Obsidian Parfums" class="logo-site">
+        </a>
+        <div id="nav"></div>
+    </header>
+
+    <main>
+        <div class="cadre-produits">
+            <p class="slogan">Collection Homme 2026</p>
+            <h2>Nos Fragrances</h2>
+            <hr class="ligne-separation">
+
+            <div class="filtres">
+                <button class="filtre-btn actif" onclick="filtrer('tous',this)">Tous (20)</button>
+                <button class="filtre-btn" onclick="filtrer('boise',this)">Boisés</button>
+                <button class="filtre-btn" onclick="filtrer('oriental',this)">Orientaux</button>
+                <button class="filtre-btn" onclick="filtrer('frais',this)">Frais</button>
+                <button class="filtre-btn" onclick="filtrer('cuire',this)">Cuirés</button>
+                <button class="filtre-btn" onclick="filtrer('intense',this)">Intenses</button>
+            </div>
+
+            <div class="compteur" id="compteur"><span>20</span> fragrances disponibles</div>
+
+            <div class="grille-produits" id="grille">
+
+                <div class="carte-produit" data-cat="frais">
+                    <div class="produit-img-wrap">
+                        <img src="image/Acqua di Giò Profondo.jpg" alt="Acqua di Giò Profondo">
+                        <span class="badge-produit badge-bestseller">Best-seller</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Frais</div>
+                        <h3>ACQUA DI GIO PROFONDO</h3>
+                        <p class="produit-notes">Oud · Ambre · Musc noir</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">100,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Acqua di Giò Profondo',100,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="boise">
+                    <div class="produit-img-wrap">
+                        <img src="image/Bvlgari Man Wood Essence.jpg" alt="Bvlgari Man Wood Essence">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Boisé</div>
+                        <h3>BVLGARI MAN WOOD ESSENCE</h3>
+                        <p class="produit-notes">Safran · Rose noire · Vanille</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">90,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Bvlgari Man Wood Essence',90,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="frais">
+                    <div class="produit-img-wrap">
+                        <img src="image/Bleu de Chanel Parfum.avif" alt="Bleu de Chanel Parfum">
+                        <span class="badge-produit badge-limited">Édition limitée</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Frais</div>
+                        <h3>BLEU DE CHANEL PARFUM</h3>
+                        <p class="produit-notes">Cèdre · Encens · Cuir noir</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">150,00 €</div><div class="produit-taille">75ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Bleu de Chanel Parfum',150,'75ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="boise">
+                    <div class="produit-img-wrap">
+                        <img src="image/Creed Aventus.webp" alt="Creed Aventus">
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Boisé</div>
+                        <h3>CREED AVENTUS</h3>
+                        <p class="produit-notes">Bergamote · Menthe · Musc blanc</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">260,00 €</div><div class="produit-taille">100ml EDT</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Creed Aventus',260,'100ml EDT')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="intense">
+                    <div class="produit-img-wrap">
+                        <img src="image/Dior Homme Intense.webp" alt="Dior Homme Intense">
+                        <span class="badge-produit badge-bestseller">Best-seller</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Intense</div>
+                        <h3>DIOR HOMME INTENSE</h3>
+                        <p class="produit-notes">Cuir · Tabac · Vétiver</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">120,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Dior Homme Intense',120,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="intense">
+                    <div class="produit-img-wrap">
+                        <img src="image/DIOR SAUVAGE ELIXIR.webp" alt="Dior Sauvage Elixir">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Intense</div>
+                        <h3>DIOR SAUVAGE ELIXIR</h3>
+                        <p class="produit-notes">Ambre · Benjoin · Patchouli</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">150,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Dior Sauvage Elixir',150,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="oriental">
+                    <div class="produit-img-wrap">
+                        <img src="image/Dolce & Gabbana The One for Men.jpg" alt="Dolce & Gabbana The One">
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Orientaux</div>
+                        <h3>DOLCE &amp; GABBANA THE ONE</h3>
+                        <p class="produit-notes">Cèdre · Mousse · Terre noire</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">100,00 €</div><div class="produit-taille">100ml EDT</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Dolce & Gabbana The One',100,'100ml EDT')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="frais">
+                    <div class="produit-img-wrap">
+                        <img src="image/Hermès Terre d’Hermès Eau Givrée.webp" alt="Terre d'Hermès Eau Givrée">
+                        <span class="badge-produit badge-limited">Édition limitée</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Frais</div>
+                        <h3>TERRE D'HERMES EAU GIVREE</h3>
+                        <p class="produit-notes">Oud fumé · Résine · Musc sombre</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">90,00 €</div><div class="produit-taille">50ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,&quot;Terre d'Hermès Eau Givrée&quot;,90,'50ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="oriental">
+                    <div class="produit-img-wrap">
+                        <img src="image/Jean Paul Gaultier Scandal Pour Homme.jpg" alt="Jean Paul Gaultier Scandal">
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Orientaux</div>
+                        <h3>JEAN PAUL GAULTIER SCANDAL</h3>
+                        <p class="produit-notes">Gingembre · Yuzu · Cèdre blanc</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">90,00 €</div><div class="produit-taille">100ml EDT</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Jean Paul Gaultier Scandal',90,'100ml EDT')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="cuire">
+                    <div class="produit-img-wrap">
+                        <img src="image/Maison Margiela Replica Jazz Club.webp" alt="Replica Jazz Club">
+                        <span class="badge-produit badge-bestseller">Best-seller</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Cuiré</div>
+                        <h3>REPLICA JAZZ CLUB</h3>
+                        <p class="produit-notes">Cuir · Poivre noir · Iris</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">152,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Replica Jazz Club',152,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="boise">
+                    <div class="produit-img-wrap">
+                        <img src="image/Montblanc Explorer.jpg" alt="Montblanc Explorer">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Boisé</div>
+                        <h3>MONTBLANC EXPLORER</h3>
+                        <p class="produit-notes">Encens · Cardamome · Rose</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">60,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Montblanc Explorer',60,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="boise">
+                    <div class="produit-img-wrap">
+                        <img src="image/Narciso Rodriguez For Him Bleu Noir.jpg" alt="Narciso Rodriguez">
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Boisé</div>
+                        <h3>NARCISO RODRIGUEZ</h3>
+                        <p class="produit-notes">Santal · Cacao · Musc doux</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">80,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Narciso Rodriguez',80,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="intense">
+                    <div class="produit-img-wrap">
+                        <img src="image/Paco Rabanne Phantom Parfum.webp" alt="Paco Rabanne Phantom">
+                        <span class="badge-produit badge-limited">Édition limitée</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Intense</div>
+                        <h3>PACO RABANNE PHANTOM</h3>
+                        <p class="produit-notes">Oud · Ambre gris · Encens blanc</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">102,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Paco Rabanne Phantom',102,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="intense">
+                    <div class="produit-img-wrap">
+                        <img src="image/Prada L’Homme Intense.webp" alt="Prada L'Homme Intense">
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Intense</div>
+                        <h3>PRADA L'HOMME INTENSE</h3>
+                        <p class="produit-notes">Sel marin · Cèdre · Vétiver</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">125,00 €</div><div class="produit-taille">100ml EDT</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,&quot;Prada L'Homme Intense&quot;,125,'100ml EDT')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="frais">
+                    <div class="produit-img-wrap">
+                        <img src="image/Roja Dove Elysium Pour Homme.webp" alt="Roja Dove Elysium">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Frais</div>
+                        <h3>ROJA DOVE ELYSIUM</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">300,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Roja Dove Elysium',300,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="boise">
+                    <div class="produit-img-wrap">
+                        <img src="image/Tom Ford Bois Pacifique.webp" alt="Tom Ford Bois Pacifique">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Boisé</div>
+                        <h3>TOM FORD BOIS PACIFIQUE</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">250,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Tom Ford Bois Pacifique',250,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="cuire">
+                    <div class="produit-img-wrap">
+                        <img src="image/Tom Ford Ombre Leather.webp" alt="Tom Ford Ombre Leather">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Cuiré</div>
+                        <h3>TOM FORD OMBRE LEATHER</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">150,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Tom Ford Ombre Leather',150,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="oriental">
+                    <div class="produit-img-wrap">
+                        <img src="image/Versace Eros Flame.webp" alt="Versace Eros Flame">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Orientaux</div>
+                        <h3>VERSACE EROS FLAME</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">100,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Versace Eros Flame',100,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="oriental">
+                    <div class="produit-img-wrap">
+                        <img src="image/Viktor & Rolf Spicebomb Extreme.png" alt="Viktor & Rolf Spicebomb Extreme">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Orientaux</div>
+                        <h3>VIKTOR &amp; ROLF SPICEBOMB EXTREME</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">120,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'Viktor & Rolf Spicebomb Extreme',120,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-produit" data-cat="frais">
+                    <div class="produit-img-wrap">
+                        <img src="image/YSL Y Le Parfum.webp" alt="YSL Y Le Parfum">
+                        <span class="badge-produit badge-new">Nouveau</span>
+                    </div>
+                    <div class="carte-corps">
+                        <div class="produit-categorie">Frais</div>
+                        <h3>YSL Y LE PARFUM</h3>
+                        <p class="produit-notes">Cuir · Genévrier · Mousse</p>
+                        <div class="carte-bas">
+                            <div><div class="produit-prix">150,00 €</div><div class="produit-taille">100ml EDP</div></div>
+                            <button class="btn-panier" onclick="ajouterPanier(event,'YSL Y Le Parfum',150,'100ml EDP')">+ Panier</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="notif" id="notif">Ajouté au panier ✓</div>
+
+    <script src="nav.js"></script>
+    <script>
+        chargerNav('produits');
+
+        function filtrer(cat, btn) {
+            document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+            btn.classList.add('actif');
+            let visible = 0;
+            document.querySelectorAll('.carte-produit').forEach(c => {
+                const show = cat === 'tous' || c.dataset.cat === cat;
+                c.style.display = show ? 'flex' : 'none';
+                if (show) visible++;
+            });
+            document.getElementById('compteur').innerHTML =
+                `<span>${visible}</span> fragrance${visible > 1 ? 's' : ''} disponible${visible > 1 ? 's' : ''}`;
+        }
+
+        function ajouterPanier(e, nom, prix, taille) {
+            e.preventDefault();
+
+            // Lire le panier existant
+            let panier = JSON.parse(localStorage.getItem('obsidian_panier') || '{}');
+
+            // Chercher si le produit existe déjà (par nom)
+            let idExistant = null;
+            for (const id in panier) {
+                if (panier[id].nom === nom) { idExistant = id; break; }
+            }
+
+            if (idExistant) {
+                panier[idExistant].qty += 1;
+            } else {
+                const id = 'p_' + Date.now();
+                panier[id] = { nom, prixUnit: prix, qty: 1, taille: taille || '100ml EDP' };
+            }
+
+            localStorage.setItem('obsidian_panier', JSON.stringify(panier));
+
+            // Notification
+            const notif = document.getElementById('notif');
+            notif.textContent = `"${nom}" ajouté au panier ✓`;
+            notif.classList.add('visible');
+            setTimeout(() => notif.classList.remove('visible'), 2500);
+        }
+    </script>
+</body>
+</html>
